@@ -1,0 +1,68 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'display_styles.css' %}">
+    <title>Video of South Lane</title>
+    <script>
+        function updateData() {
+            fetch('http://127.0.0.1:8000/getDisplayData')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('cars').innerHTML = data.noOfCarsSouth;
+                    document.getElementById('bikes').innerHTML = data.noOfBikesSouth;
+                    document.getElementById('trucks').innerHTML = data.noOfTrucksSouth;
+                });
+        }
+        setInterval(updateData,100);
+    </script>
+</head>
+
+<body>
+    <div>
+        <img src="{% url 'videoFeedSouth' %}" alt="Traffic" height="300" width="300"></img>
+
+    </div>
+    <table>
+        <tr>
+            <td colspan="2" class="t-header">
+                Lane 4 South
+            </td>
+        </tr>
+        <tr>
+            <td class="attribute">
+                Cars
+            </td>
+            <td class="values" id="cars">
+                0
+            </td>
+        </tr>
+        <tr>
+            <td class="attribute">
+                Bikes
+            </td>
+            <td class="values" id="bikes">
+                0
+            </td>
+        </tr>
+        <tr>
+            <td class="attribute">
+                Trucks
+            </td>
+            <td class="values" id="trucks">
+                0
+            </td>
+        </tr>
+    </table>
+
+
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal Status</title>
+    <link rel="stylesheet" href="{% static 'homepageStyles.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="{% static 'scripts.js' %}"></script>
+
+</head>
+
+<body>
+    <div id="westernCapitalCityDiv">
+        <table id="westernCapitalCity">
+            <tr>
+                <td class="attribute">No. of Vehicles</td>
+                <td class="values" id="noOfVehiclesWest">{{noOfVehiclesWest}}</td>
+            </tr>
+            <tr>
+                <td class="attribute">Timer</td>
+                <td class="values" id="timerWest">{{timer}}</td>
+            </tr>
+            <tr>
+                <td class="attribute">Est. Wait Time</td>
+                <td class="values" id="estimatedWaitTimeWest">0</td>
+            </tr>
+        </table>
+        <div class="signal">
+            <div class="light" id="westRed"></div>
+            <div class="light" id="westGreen"></div>
+        </div>
+    </div>
+
+    <div id="northernIslesAndSouthernProvinceDiv">
+        <div id="northernIslesDiv">
+            <table id="northernIsles">
+                <tr>
+                    <td class="attribute">No. of Vehicles</td>
+                    <td class="values" id="noOfVehiclesNorth">{{noOfVehiclesNorth}}</td>
+                </tr>
+                <tr>
+                    <td class="attribute">Timer</td>
+                    <td class="values" id="timerNorth">{{timer}}</td>
+                </tr>
+                <tr>
+                    <td class="attribute">Est. Wait Time</td>
+                    <td class="values" id="estimatedWaitTimeNorth">0</td>
+                </tr>
+            </table>
+            <div class="signal">
+                <div class="light" id="northRed"></div>
+                <div class="light" id="northGreen"></div>
+            </div>
+        </div>
+
+        <div id="southernProvinceDiv">
+            <div id="southernProvinceInnerDiv">
+                <table id="southernProvince">
+                    <tr>
+                        <td class="attribute">No. of Vehicles</td>
+                        <td class="values" id="noOfVehiclesSouth">{{noOfVehiclesSouth}}</td>
+                    </tr>
+                    <tr>
+                        <td class="attribute">Timer</td>
+                        <td class="values" id="timerSouth">{{timer}}</td>
+                    </tr>
+                    <tr>
+                        <td class="attribute">Est. Wait Time</td>
+                        <td class="values" id="estimatedWaitTimeSouth">0</td>
+                    </tr>
+                </table>
+                <div class="signal">
+                    <div class="light" id="southRed"></div>
+                    <div class="light" id="southGreen"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="easternPortsDiv">
+        <div class="signal">
+            <div class="light" id="eastRed"></div>
+            <div class="light" id="eastGreen"></div>
+        </div>
+        <table id="easternPorts">
+            <tr>
+                <td class="attribute">No. of Vehicles</td>
+                <td class="values" id="noOfVehiclesEast">{{noOfVehiclesEast}}</td>
+            </tr>
+            <tr>
+                <td class="attribute">Timer</td>
+                <td class="values" id="timerEast">{{timer}}</td>
+            </tr>
+            <tr>
+                <td class="attribute">Est. Wait Time</td>
+                <td class="values" id="estimatedWaitTimeEast">0</td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+
+</html>
